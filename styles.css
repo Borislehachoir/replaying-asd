@@ -101,3 +101,15 @@ dialog::backdrop {
 /*Page journal (emplacement texte)*/
 
 /*Poème*/
+
+.poem {
+  background: url("img/posthite.png") center / contain no-repeat;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 50px 40px 50px;
+  box-sizing: border-box;
+}
