@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal d'Emilie Moreau </title>
-    <meta name="author" content="Marina Jennequin, Boris Rocchietti, en collaboration avec l'IUT de Tarbes et l'Université néo-zélandaise de [j'ai plus le nom]">
+    <meta name="author"
+        content="Marina Jennequin, Boris Rocchietti, en collaboration avec l'IUT de Tarbes et l'Université néo-zélandaise de [j'ai plus le nom]">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <main>
         <h1 id="titre"> ici on aura le TITRE du projet</h1>
         <aside>
-            <div id="photo">
-                photo avec scotch
+            <div id="photo" class="img-tape img-tape--3">
+                <img src="img/nyan.webp" alt="chat adorable">
+
             </div>
             <div id="audio">
-                <p>Ici l'audio</p>
-                <audio src=""></audio>
+                <button onclick="document.querySelector('dialog').showModal()"> 
+                    <img src="img/sticker_casque.png" alt="sticker de casque moderne et vachement joli">
+                </button>
+                <dialog>
+                    <button onclick="this.parentElement.close()">✕</button>
+                    <audio controls src="audio.mp3"></audio>
+                </dialog>
             </div>
-            <div id="bouton-jeu"><button>ici le petit btn pour le jeu</button></div>
+            <div id="bouton-jeu">
+                <button>
+                 <img src="img/manette_jeu.webp" alt="manette de console stylisée avec un petit côté rétro">
+                </button>
+            </div>
         </aside>
         <section>
             <div id="page-journal">
@@ -35,4 +49,5 @@
         </section>
     </main>
 </body>
+
 </html>
