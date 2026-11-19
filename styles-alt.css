@@ -1,0 +1,166 @@
+/* Styles généraux (body, h1, etc)*/
+
+
+:root {
+  color-scheme: light;
+  --bg: url("img/notebook-no-spirals.png") center / 100% 100% no-repeat;
+  --paper: #f7f0e9;
+  --text: #20242a;
+}
+
+body {
+  background-image: url(img/table-texture.jpg);
+}
+
+
+::-webkit-scrollbar-track {
+background: #ece6cb;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c99157;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:#20242a;
+}
+
+/* tout ce qui gère l'affichage de la page et tout */
+
+
+main {
+  max-width: 1500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 40% minmax(0, 1fr);
+  gap: 20px;
+}
+
+.main {
+  background: var(--bg);
+  /*box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.45); */
+  border-radius: 10px;
+  padding: 75px 105px 90px 190px;
+  box-sizing: border-box;
+}
+
+
+.titre-projet {
+  margin-left: 0;
+}
+
+#titre {
+  grid-column: 1 / -1;
+}
+
+aside {
+  grid-column: 1;
+  min-width: 0;
+}
+
+section {
+  grid-column: 2;
+  min-width: 0;
+  margin-left: 0;
+}
+
+aside img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/*Photo et scotch*/
+.img-tape {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto 10px;
+  max-width: 100%;
+
+  &:before,
+  &:after {
+    background: rgba(255, 255, 235, .6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    content: "";
+    display: block;
+    height: 30px;
+    position: absolute;
+    margin: auto;
+    width: 100px;
+  }
+
+  img {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+  }
+}
+
+.img-tape--3 {
+  &:before {
+    left: -5px;
+    top: 5px;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    bottom: 10px;
+    right: -50px;
+    transform: rotate(-35deg);
+  }
+}
+
+/*Sticker audio*/
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px #0003;
+}
+
+dialog::backdrop {
+  background: #0008;
+}
+
+/*Bouton jeu*/
+
+/*Page journal (emplacement texte)*/
+
+/*Poème*/
+
+.poem {
+  background: url("img/posthite.png") center / contain no-repeat;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 50px 40px 50px;
+  box-sizing: border-box;
+}
+/* Évite les débordements sur les écrans plus étroits */
+@media (max-width: 750px) {
+  .main { padding: 55px 12% 75px 17%; }
+  main { grid-template-columns: 1fr; }
+  aside, section { grid-column: 1; }
+  #titre-journal { font-size: 1.5rem; overflow-wrap: anywhere; }
+}

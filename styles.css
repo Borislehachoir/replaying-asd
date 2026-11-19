@@ -3,16 +3,59 @@
 
 :root {
   color-scheme: light;
-  --bg: #f3eee8;
+  --bg: url("img/notebook-spirals.png") center / 100% 100% no-repeat;
   --paper: #f7f0e9;
   --text: #20242a;
 }
 
+body {
+  background-image: url(img/table-texture.jpg);
+}
+
+
+::-webkit-scrollbar-track {
+background: #ece6cb;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c99157;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:#20242a;
+}
+
+/* tout ce qui gère l'affichage de la page et tout */
+
 
 main {
+  max-width: 1100px;
+  margin: auto;
   display: grid;
   grid-template-columns: 30% 1fr;
   gap: 20px;
+}
+
+.main {
+  background: var(--bg);
+  /*box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.45); */
+  border-radius: 10px;
+  padding: 60px 50px 60px 160px;
+  box-sizing: border-box;
+}
+
+
+.titre-projet {
+  margin-left: 50px;
 }
 
 #titre {
@@ -86,14 +129,26 @@ aside img {
 /*Sticker audio*/
 
 dialog {
-  border: none;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 10px 30px #0003;
+  width: min(340px, 85vw);
+  padding: 25px;
+  border: 1px solid #c6b89c;
+  border-radius: 3px;
+  background: #f8f2e5;
+  box-shadow: 5px 8px 20px #0005;
+  transform: rotate(-1deg);
 }
 
-dialog::backdrop {
-  background: #0008;
+dialog::backdrop { background: #29221870; }
+
+dialog audio { width: 100%; }
+
+dialog button {
+  float: right;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: #69523e;
 }
 
 /*Bouton jeu*/
