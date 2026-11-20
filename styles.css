@@ -1,11 +1,29 @@
-/* Styles généraux (body, h1, etc)*/
+/* Styles généraux (body, h1, imports de typos)*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Nanum+Pen+Script&display=swap');
 
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('./fonts/opendys/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Forward Serif';
+  src: url('./fonts/forward/ForwardSerif.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   color-scheme: light;
   --bg: url("img/notebook-spirals.png") center / 100% 100% no-repeat;
   --paper: #f7f0e9;
-  --text: #20242a;
+  --text-disorder: #36717A;
+  --text-title: 'Forward Serif', serif;
+  --text: 'Nanum Pen Script', cursive;
+  --text-title-dys: 'OpenDyslexic', sans-serif;
+  --text-dys: 'Comic Relief', cursive;
 }
 
 body {
@@ -14,7 +32,7 @@ body {
 
 
 ::-webkit-scrollbar-track {
-background: #ece6cb;
+  background: #ece6cb;
 }
 
 ::-webkit-scrollbar {
@@ -31,7 +49,7 @@ background: #ece6cb;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background:#20242a;
+  background: #20242a;
 }
 
 /* tout ce qui gère l'affichage de la page et tout */
@@ -56,6 +74,8 @@ main {
 
 .titre-projet {
   margin-left: 50px;
+  color: var(--text-disorder);
+  font-family: var(--text-title-dys);
 }
 
 #titre {
@@ -138,9 +158,13 @@ dialog {
   transform: rotate(-1deg);
 }
 
-dialog::backdrop { background: #29221870; }
+dialog::backdrop {
+  background: #29221870;
+}
 
-dialog audio { width: 100%; }
+dialog audio {
+  width: 100%;
+}
 
 dialog button {
   float: right;
@@ -151,14 +175,25 @@ dialog button {
   color: #69523e;
 }
 
+casque {
+  padding: 30px;
+}
+
 /*Bouton jeu*/
 
 /*Page journal (emplacement texte)*/
+
+.page-journal {
+  color: var(--text-disorder);
+  font-family: var(--text);
+  font-size: 22px;
+}
 
 /*Poème*/
 
 .poem {
   background: url("img/posthite.png") center / contain no-repeat;
+  font-family: var(--text);
   width: 400px;
   height: 400px;
   display: flex;
