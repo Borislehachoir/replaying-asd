@@ -4,51 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal d'Emilie Moreau </title>
+    <title>Emily Benett's diary </title>
     <meta name="author"
-        content="Marina Jennequin, Boris Rocchietti, en collaboration avec l'IUT de Tarbes et l'Université néo-zélandaise de [j'ai plus le nom]">
+        content="Marina Jennequin, Boris Rocchietti, en collaboration avec l'IUT de Tarbes et l'Université néo-zélandaise de Waikato">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <main class="main">
+        
+        <div class="dys-switch">
+            <span>Bouton dys</span>
+            <div class="switch-track">
+                <button id="switch-dys" type="button" role="switch" aria-checked="false"
+                    aria-label="Activer la police dys"></button>
+            </div>
+        </div>
+
         <h1 id="titre" class="titre-projet"> Through the Looking Glass</h1>
         <aside>
             <div id="photo" class="img-tape img-tape--3">
                 <img src="img/nyan.webp" alt="chat adorable">
-
             </div>
-            <div id="audio" class ="casque">
+            <div id="audio" class="casque">
                 <a onclick="document.querySelector('dialog').showModal()">
-                    <img src="img/sticker_casque.png" alt="sticker de casque moderne et vachement joli">
+                    <img src="img/sticker_casque.svg" alt="sticker de casque moderne et vachement joli">
                 </a>
                 <dialog>
                     <button onclick="this.parentElement.close()">✕</button>
-                    <audio controls src="audio.mp3"></audio>
+                    <audio controls src="audio/Interview-ptut.mp3"></audio>
                 </dialog>
             </div>
             <div id="bouton-jeu">
                 <a href="https://www.google.com">
-                    <img src="img/manette_jeu.webp" alt="manette de console stylisée avec un petit côté rétro">
+                    <img src="img/manette_jeu.svg" alt="manette de console stylisée avec un petit côté rétro">
                 </a>
             </div>
         </aside>
         <section>
             <div id="page-journal" class="page-journal">
-                <p id="texte">Calm down… Easy… Keep to yourself for now</p>
-                <p id="texte">PT1</p>
-                <p id="texte">Need help in maths, Can handle english</p> <br>
-                <p id="texte">Dang the age gap also feels awkward</p>
-                <p id="texte">Text aunty Gwladys to check how she’s doing</p>
-                <p id="texte">Student card → secretary</p>
-                <p id="texte">⚠️ call the psychiatrist</p>
-                <p id="texte">1:30pm to 3pm → lecture hall E</p>
+                <p>Calm down… Easy… Keep to yourself for now</p>
+                <p>PT1</p>
+                <p>Need help in maths, Can handle english</p>
+                <p>Dang the age gap also feels awkward</p>
+                <p>Text aunty Gwladys to check how she’s doing</p>
+                <p>Student card → secretary</p>
+                <p>⚠️ call the psychiatrist</p>
+                <p>1:30pm to 3pm → lecture hall E</p>
             </div>
             <div id="poeme" class="poem">
                 Whilst the sky has fallen beneath night's veil and all is but darkness, <br>
-                Only then can all these stars and magnificent galaxies be witnessed. 
+                Only then can all these stars and magnificent galaxies be witnessed.
             </div>
         </section>
     </main>
+
+    <script type="module" src="script.js">
+    </script>
 </body>
+
 </html>

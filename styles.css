@@ -30,7 +30,6 @@ body {
   background-image: url(img/table-texture.jpg);
 }
 
-
 ::-webkit-scrollbar-track {
   background: #ece6cb;
 }
@@ -51,6 +50,27 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #20242a;
 }
+
+
+/* adaptation pour personnes dys */
+body.dys {
+  --text-title: var(--text-title-dys);
+  --text: var(--text-dys);
+}
+
+body.dys .page-journal {
+  font-size: clamp(14px, 1.3vw, 18px);
+}
+
+/* Ajustement des autres textes */
+body.dys .titre-projet {
+  font-size: clamp(24px, 3vw, 38px);
+}
+
+body.dys .poem {
+  font-size: 18px;
+}
+
 
 /* tout ce qui gère l'affichage de la page et tout */
 
@@ -75,7 +95,7 @@ main {
 .titre-projet {
   margin-left: 50px;
   color: var(--text-disorder);
-  font-family: var(--text-title-dys);
+  font-family: var(--text-title);
 }
 
 #titre {
@@ -184,10 +204,31 @@ casque {
 /*Page journal (emplacement texte)*/
 
 .page-journal {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
   color: var(--text-disorder);
   font-family: var(--text);
-  font-size: 22px;
+  font-size: clamp(16px, 2vw, 26px);
 }
+
+.page-journal p {
+  position: absolute;
+  margin: 0;
+  margin-right: 10px;
+  max-width: 80%;
+  white-space: normal;
+}
+
+/* top | left | rotation */
+.page-journal p:nth-child(1) { top: 2%;  left: 8%;  rotate: -2deg; }
+.page-journal p:nth-child(2) { top: 20%; left: 30%; rotate: 3deg; }
+.page-journal p:nth-child(3) { top: 35%; left: 0%;  rotate: -2deg; }
+.page-journal p:nth-child(4) { top: 70%; left: 40%; rotate: -3deg; }
+.page-journal p:nth-child(5) { top: 48%; left: 20%; rotate: 2deg; }
+.page-journal p:nth-child(6) { top: 28%; left: 52%; rotate: 3deg; }
+.page-journal p:nth-child(7) { top: 60%; left: 5%;  rotate: -3deg; }
+.page-journal p:nth-child(8) { top: 85%; left: 15%; rotate: 2deg; }
 
 /*Poème*/
 
@@ -201,5 +242,94 @@ casque {
   justify-content: center;
   text-align: center;
   padding: 0 50px 40px 50px;
+  box-sizing: border-box; 
+  transform-origin: center 15%;
+  cursor: default;
+  will-change: transform;
+}
+
+/*btn dys */
+.dys-switch {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: var(--text-disorder);
+  font: 18px var(--text-title);
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 10px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.switch-track {
+  width: 96px;
+  height: 40px;
+  padding: 4px;
   box-sizing: border-box;
+  background: #e7d98d;
+  border: 2px solid #b5a876;
+  border-radius: 30px;
+}
+
+#switch-dys {
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid #36717a;
+  border-radius: 50%;
+  background: #fdf9e9;
+  cursor: grab;
+  touch-action: none;
+}
+
+.dys-switch:active {
+  cursor: grabbing;
+}
+
+.dys-switch span {
+  cursor: grab;
+}
+
+#switch-dys:active { cursor: grabbing; }
+
+/*MEDIAAAAAS QUERIEEEES :3 */
+
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  section {
+    margin-left: 0;
+  }
+
+  .page-journal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .page-journal p {
+    position: static;
+    max-width: 100%;
+    rotate: 0deg;
+  }
+
+  .page-journal p:nth-child(even) {
+    align-self: flex-end;
+    rotate: 2deg;
+  }
+
+  .page-journal p:nth-child(odd) {
+    align-self: flex-start;
+    rotate: -2deg;
+  }
 }
